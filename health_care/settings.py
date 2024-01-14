@@ -29,7 +29,7 @@ SECRET_KEY = env('SECURITY_KEY')
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
-
+CSRF_TRUSTED_ORIGINS = ['https://health-care-buts.onrender.com/', 'https://*.127.0.0.1']
 
 # Application definition
 
