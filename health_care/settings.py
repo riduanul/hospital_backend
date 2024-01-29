@@ -32,6 +32,14 @@ ALLOWED_HOSTS = ['*']
 CSRF_TRUSTED_ORIGINS = ['https://health-care-buts.onrender.com/', 'https://*.127.0.0.1', 'https://health-care-buts.onrender.com', 'https://health-care-buts.onrender']
 
 # Application definition
+CORS_ALLOW_ALL_ORIGINS = True
+
+CORS_ALLOWED_ORIGINS = [
+    "http://127.0.0.1:5500",
+    "https://health-care-buts.onrender.com",
+    'https://*.127.0.0.1',
+ 
+]
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -40,7 +48,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    #added from support
+    'corsheaders',
     'django.contrib.sessions.backends.db',
     'rest_framework',
     'rest_framework.authtoken',
@@ -62,6 +70,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+     'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
 ]
 
 ROOT_URLCONF = 'health_care.urls'

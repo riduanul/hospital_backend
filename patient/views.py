@@ -47,6 +47,7 @@ def activate(request, uid64, token):
     try:
         uid = urlsafe_base64_decode(uid64).decode()
         user = User._default_manager.get(pk = uid)
+        print(uid, user)
     except (User.DoesNotExist):
         user = None
         raise Http404("Invalid activation link")
